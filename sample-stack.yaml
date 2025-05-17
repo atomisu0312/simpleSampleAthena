@@ -5,13 +5,13 @@ AWSTemplateFormatVersion: '2010-09-09'
 Parameters:
   DataS3BucketARN:
     Type: String
-    Default: arn:aws:s3:::data-athena-${AWS::AccountId}
+    Default: arn:aws:s3:::data-athena-01643665345 # 事前に用意する必要あり
   DataS3BucketPath:
     Type: String
-    Default: s3://data-athena-${AWS::AccountId}/data/
+    Default: s3://data-athena-01643665345/data/
   OutputS3BucketPath:
     Type: String
-    Default: s3://data-athena-${AWS::AccountId}/athena-output/
+    Default: s3://data-athena-01643665345/athena-output/
  
 # The Resources section defines metadata for the Resources.
 # Create IAM Role assumed by the crawler. For demonstration, this role is given all related permissions.

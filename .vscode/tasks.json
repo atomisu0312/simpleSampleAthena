@@ -1,0 +1,27 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "1. スタックデプロイ",
+      "type": "shell",
+      "command": "aws cloudformation deploy --template-file sample-stack.yaml --stack-name sample-stack --capabilities CAPABILITY_NAMED_IAM"
+    },
+    {
+      "label": "2. クローラ実行",
+      "type": "shell",
+      "command": "scripts/runClawler.sh"
+    },
+    {
+      "label": "3. クエリ実行（結果はresultディレクトリ内に格納される）",
+      "type": "shell",
+      "command": "scripts/queryExec.sh"
+    },
+    {
+      "label": "4. スタック削除",
+      "type": "shell",
+      "command": "aws cloudformation delete-stack --stack-name sample-stack"
+    }
+  ]
+}
